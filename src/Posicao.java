@@ -1,10 +1,10 @@
 public class Posicao {
 
-    int colunas;
+    char colunas;
     int linhas;
 
 
-    public Posicao(int colunas, int linhas) {
+    public Posicao(char colunas, int linhas) {
         this.colunas = colunas;
         this.linhas = linhas;
     }
@@ -17,7 +17,7 @@ public class Posicao {
         return colunas;
     }
 
-    public void setColunas(int colunas) {
+    public void setColunas(char colunas) {
         this.colunas = colunas;
     }
 
@@ -27,5 +27,11 @@ public class Posicao {
 
     public void setLinhas(int linhas) {
         this.linhas = linhas;
+    }
+
+    public boolean estaDentroDoTabuleiro() {
+        // retorna true se linha e coluna estão entre 0 e 7
+
+        return getLinhas() >= 1 && getLinhas() <= 8;
     }
 }
