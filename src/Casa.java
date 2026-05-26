@@ -1,5 +1,28 @@
 public class Casa {
 
-    Posicao posicao = new Posicao();
+    private Posicao posicao;
+    private Peca peca;
+
+
+    public Casa(Posicao posicao) {
+        this.posicao = posicao;
+    }
+
+    public boolean estaVazia() {
+        if (peca == null){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public Cor getCorDaCasa() {
+
+        if (posicao.getLinhas() + posicao.getColunas() % 2 == 0){
+            return Cor.Branca;
+        } else {
+            return Cor.Preta;
+        }
+    }
 
 }

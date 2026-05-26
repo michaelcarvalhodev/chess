@@ -30,8 +30,13 @@ public class Posicao {
     }
 
     public boolean estaDentroDoTabuleiro() {
-        // retorna true se linha e coluna estão entre 0 e 7
 
-        return getLinhas() >= 1 && getLinhas() <= 8;
+        if (getColunas() >= 'a' && getColunas() <= 'h' ){
+
+            return true;
+        } else {
+            return false;
+        }
+
     }
 }
