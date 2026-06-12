@@ -25,4 +25,8 @@ public class Casa {
         }
     }
 
+    @Override
+    public String toString() {
+        return posicao.toString();
+    }
 }

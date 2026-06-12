@@ -6,6 +6,7 @@ public class Tabuleiro {
     public Tabuleiro() {
 
         for (int i = 0; i < casas.length; i++) {
+
             for (int j = 0; j < casas[i].length; j++) {
 
                 char coluna = (char) ('A' + j);
@@ -14,8 +15,27 @@ public class Tabuleiro {
 
                 casas[i][j] = new Casa(posicao);
 
+
             }
         }
     }
+
+
+    public void imprimir() {
+
+        for (int i = 7; i >= 0; i--) {
+
+            for (int j = 0; j < casas[i].length; j++) {
+
+                System.out.print(casas[i][j] + " ");
+
+            }
+                System.out.println();
+        }
+
+    }
+    
+
+
 }
  

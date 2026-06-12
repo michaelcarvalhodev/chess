@@ -1,42 +1,37 @@
 public class Posicao {
 
-    char colunas;
-    int linhas;
+    private char colunas;
+    private int linhas;
 
 
     public Posicao(char colunas, int linhas) {
-        this.colunas = colunas;
+        this.colunas = Character.toUpperCase(colunas);
         this.linhas = linhas;
     }
 
-    public Posicao() {
 
-    }
-
-    public int getColunas() {
+    public char getColunas() {
         return colunas;
     }
 
-    public void setColunas(char colunas) {
-        this.colunas = colunas;
-    }
 
     public int getLinhas() {
         return linhas;
     }
 
-    public void setLinhas(int linhas) {
-        this.linhas = linhas;
+
+    @Override
+    public String toString() {
+        return
+                 colunas +
+                "" + linhas
+                ;
     }
 
     public boolean estaDentroDoTabuleiro() {
-
-        if (getColunas() >= 'a' && getColunas() <= 'h' ){
-
-            return true;
-        } else {
-            return false;
-        }
-
+        return (getColunas() >= 'A' && getColunas() <= 'H' ) && (getLinhas() >= 1 && getLinhas() <= 8);
     }
+
+
+
 }

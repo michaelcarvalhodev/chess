@@ -7,7 +7,9 @@ public class Main {
 
         Tabuleiro tabuleiro = new Tabuleiro();
 
-        System.out.println(Arrays.deepToString(tabuleiro));
+        tabuleiro.imprimir();
+
+
 
     }
 }
