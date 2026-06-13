@@ -1,3 +1,5 @@
+package xadrez;
+
 public class Casa {
 
     private Posicao posicao;

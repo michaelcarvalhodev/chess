@@ -1,3 +1,5 @@
+package xadrez;
+
 public class Posicao {
 
     private char colunas;
