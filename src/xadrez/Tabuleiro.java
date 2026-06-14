@@ -36,8 +36,18 @@ public class Tabuleiro {
         }
 
     }
-    
 
+    public Casa getCasa(Posicao posicao){
+
+        if (!posicao.estaDentroDoTabuleiro()){
+            throw new IllegalArgumentException("Posicao nao encontrada no tabuleiro");
+        }
+
+        int indiceLinha = posicao.getLinhas() - 1;
+        int indiceColuna = posicao.getColunas() - 'A';
+
+        return casas[indiceLinha][indiceColuna];
+    }
 
 }
  

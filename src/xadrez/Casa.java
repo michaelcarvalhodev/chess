@@ -27,6 +27,10 @@ public class Casa {
         }
     }
 
+    public Peca getPeca() {
+        return peca;
+    }
+
     @Override
     public String toString() {
         return posicao.toString();
