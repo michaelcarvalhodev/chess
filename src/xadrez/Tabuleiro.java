@@ -49,5 +49,12 @@ public class Tabuleiro {
         return casas[indiceLinha][indiceColuna];
     }
 
+    public void colocarPeca(Peca peca, Posicao posicao){
+
+        Casa casa = getCasa(posicao);
+        casa.setPeca(peca);
+
+    }
+
 }
  

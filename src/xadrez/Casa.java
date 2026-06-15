@@ -5,6 +5,9 @@ public class Casa {
     private Posicao posicao;
     private Peca peca;
 
+    public void setPeca(Peca peca) {
+        this.peca = peca;
+    }
 
     public Casa(Posicao posicao) {
         this.posicao = posicao;
