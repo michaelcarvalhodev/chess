@@ -1,5 +1,6 @@
 package xadrez;
 
+import xadrez.pecas.Bispo;
 import xadrez.pecas.Torre;
 
 import java.util.List;
@@ -7,24 +8,19 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-//        System.out.println("XADREZ.com");
 
         Tabuleiro tabuleiro = new Tabuleiro();
 
-//        tabuleiro.imprimir();
+        tabuleiro.imprimir();
 
 
-        Torre torre = new Torre(Cor.Branca);
+        Bispo bispo = new Bispo (Cor.Branca);
 
-        Torre torreteste = new Torre(Cor.Preta);
+        Posicao origemtest = new Posicao('D', 4);
 
-        Posicao origem = new Posicao('D', 1);
+        tabuleiro.colocarPeca(bispo, origemtest);
 
-        Posicao origemtest = new Posicao('D', 8);
-
-        tabuleiro.colocarPeca(torreteste, origemtest);
-
-        List<Posicao> movimentos = torre.movimentosPossiveis(tabuleiro, origem);
+        List<Posicao> movimentos = bispo.movimentosPossiveis(tabuleiro, origemtest);
         System.out.println(movimentos);
 
 
