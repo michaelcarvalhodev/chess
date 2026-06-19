@@ -26,7 +26,7 @@ public class Bispo extends Peca {
 
         while (linhaAtual <= 8 && colunaAtual <= 'H') {
 
-            Posicao novaposicao = new Posicao(origem.getColunas(), linhaAtual);
+            Posicao novaposicao = new Posicao(colunaAtual, linhaAtual);
             Casa casa = tabuleiro.getCasa(novaposicao);
 
             if (casa.estaVazia()) {
@@ -42,6 +42,80 @@ public class Bispo extends Peca {
             }
 
         }
+
+        //Cima esquerda
+
+        linhaAtual = origem.getLinhas() + 1;
+        colunaAtual = (char)(origem.getColunas() - 1);
+        while (linhaAtual <= 8 && colunaAtual >= 'A') {
+
+            Posicao novaposicao = new Posicao(colunaAtual, linhaAtual);
+            Casa casa = tabuleiro.getCasa(novaposicao);
+
+            if (casa.estaVazia()) {
+                movimentos.add(novaposicao);
+                linhaAtual++;
+                colunaAtual--;
+
+            } else if (casa.getPeca().getCor() != this.cor) {
+                movimentos.add(novaposicao);
+                break;
+            } else {
+                break;
+            }
+
+        }
+
+
+        //Baixo direita
+        linhaAtual = origem.getLinhas() - 1;
+        colunaAtual = (char)(origem.getColunas() + 1);
+        while (linhaAtual >= 1 && colunaAtual <= 'H') {
+
+            Posicao novaposicao = new Posicao(colunaAtual, linhaAtual);
+            Casa casa = tabuleiro.getCasa(novaposicao);
+
+            if (casa.estaVazia()) {
+                movimentos.add(novaposicao);
+                linhaAtual--;
+                colunaAtual++;
+
+            } else if (casa.getPeca().getCor() != this.cor) {
+                movimentos.add(novaposicao);
+                break;
+            } else {
+                break;
+            }
+
+        }
+
+
+
+//        Baixo esquerda
+
+        linhaAtual = origem.getLinhas() - 1;
+        colunaAtual = (char)(origem.getColunas() - 1);
+        while (linhaAtual >= 1 && colunaAtual >= 'A') {
+
+            Posicao novaposicao = new Posicao(colunaAtual, linhaAtual);
+            Casa casa = tabuleiro.getCasa(novaposicao);
+
+            if (casa.estaVazia()) {
+                movimentos.add(novaposicao);
+                linhaAtual--;
+                colunaAtual--;
+
+            } else if (casa.getPeca().getCor() != this.cor) {
+                movimentos.add(novaposicao);
+                break;
+            } else {
+                break;
+            }
+
+        }
+
+
+
         return movimentos;
     }
 }
