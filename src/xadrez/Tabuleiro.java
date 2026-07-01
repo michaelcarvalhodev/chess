@@ -22,7 +22,6 @@ public class Tabuleiro {
         }
     }
 
-
     public void imprimir() {
 
         for (int i = 7; i >= 0; i--) {
